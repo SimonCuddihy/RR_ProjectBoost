@@ -1,5 +1,10 @@
 # CUSTOM Addition of *.meta [by dev - SIMON]
+#Ignore all .meta file
 *.meta
+#But not source file with postfix. which is everything but a folder
+!*.*.meta
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # This .gitignore file should be placed at the root of your Unity project directory
 #

@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - deadly
-  - friendly
+  - Friendly
+  - Deadly
+  - Next Level
   layers:
   - Default
   - TransparentFX

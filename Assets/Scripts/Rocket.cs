@@ -1,13 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
 
-    Rigidbody rigidbody;
+    new Rigidbody rigidbody; // added 'new' keyword to suppress warning. might need to delete
     [SerializeField] float rcsThrust = 150f;
     [SerializeField] float mainThrust = 20f;
+    const float deathRcsThrust = 1000f;
+    const float deathMainThrust = 500f;
+    private string[] deathDirection = { "NW", "N", "NE" };
 
     // Start is called before the first frame update
     void Start()
@@ -53,22 +55,25 @@ public class Rocket : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        int currentScene = SceneManager.sceneCount - 1;
+        
         switch (collision.gameObject.tag)
         {
-            case "friendly":
-                print("ok");
+            case "Friendly":
+                // do nothing
                 break;
-            case "fuel":
-                print("refueling");
+            case "Next Level":
+                SceneManager.LoadScene(currentScene + 1);
+                break;
+            case "Finish":
+                currentScene += 1;
+                SceneManager.LoadScene(currentScene);
                 break;
             default:
-                print("dead");
+                SceneManager.LoadScene(currentScene);
                 break;
         }
-        //ContactPoint contact = collision.contacts[0];
-        //Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
-        //Vector3 position = contact.point;
-        //Instantiate(explosionPrefab, position, rotation);
-        //Destroy(gameObject);
     }
+
+
 }

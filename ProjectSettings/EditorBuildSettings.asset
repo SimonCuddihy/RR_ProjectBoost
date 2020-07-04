@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ProjectBoostGame Level 2.unity
     guid: 97d5f24a7364e6346bf9a3c3e070c4f1
+  - enabled: 1
+    path: Assets/Scenes/ProjectBoostGame Level 3.unity
+    guid: fadbc7f83eed0e34cb79014f1b2a90ee
+  - enabled: 1
+    path: Assets/Scenes/ProjectBoostGame Level 4.unity
+    guid: 6e89f9e707c0b654b81ea6895f447909
+  - enabled: 1
+    path: Assets/Scenes/ProjectBoostGame Level 5.unity
+    guid: 047110b1e4c5b5d478bf11515b3762f0
   m_configObjects: {}
